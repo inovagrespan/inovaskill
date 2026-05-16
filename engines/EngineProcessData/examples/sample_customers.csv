@@ -1,0 +1,3 @@
+Nome do Cliente,E-mail,CPF/CNPJ,Telefone,Cidade,UF,Valor Total,Coluna Extra
+Maria Silva,maria@example.com,12345678900,11999999999,Sao Paulo,SP,"120,50",ignorar
+Joao Pereira,joao@example.com,98765432100,21988888888,Rio de Janeiro,RJ,300,ignorar

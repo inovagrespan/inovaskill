@@ -1,0 +1,42 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+*.rsuser
+.vs/
+
+# API runtime files
+src/InovaSkillGrespan.Api/uploads/
+src/InovaSkillGrespan.Api/appsettings.Development.json
+
+# Python
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local databases and generated metadata
+*.sqlite
+*.sqlite3
+*.db
+engines/EngineProcessData/data/
+
+# Local/imported spreadsheets and archives
+Base de Dados-*/
+*.zip
+*.xlsx
+*.xls
+
+# Environment files
+.env
+.env.*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
