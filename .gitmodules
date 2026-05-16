@@ -1,0 +1,3 @@
+[submodule "command-center-insights"]
+	path = command-center-insights
+	url = https://github.com/inovagrespan/command-center-insights.git
