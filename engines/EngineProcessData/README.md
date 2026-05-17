@@ -52,6 +52,11 @@ HTTP -> ProcessImportFileUseCase -> IUploadedFileStorage
                                   -> Python process_import.py
 ```
 
+Decisao atual de arquitetura:
+- sem fila de processamento nesta fase;
+- a API ASP.NET Core executa a engine Python via processo do sistema;
+- evolucoes de template e pipeline devem respeitar este fluxo ate nova decisao arquitetural.
+
 Subir a API:
 
 ```powershell
@@ -72,6 +77,15 @@ multipart `confirmations` com um objeto JSON, por exemplo:
 ```powershell
 curl.exe -F "file=@..\..\engines\EngineProcessData\examples\sample_customers.csv" -F "confirmations={\"Custumer name\":\"customer_name\"}" http://localhost:5088/api/imports
 ```
+
+O script Python tambem aceita um contrato versionado completo:
+
+```text
+python tools/process_import.py <arquivo> --request-json "{...}"
+```
+
+No fluxo atual da API, esse contrato `v1` e enviado automaticamente para a
+engine (sem uso de fila).
 
 ## Estrutura
 

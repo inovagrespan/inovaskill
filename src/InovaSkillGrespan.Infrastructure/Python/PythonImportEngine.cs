@@ -22,7 +22,7 @@ public sealed class PythonImportEngine : IImportEngine
 
     public async Task<JsonElement> ProcessAsync(
         StoredUploadedFile file,
-        string? confirmationsJson,
+        string requestJson,
         CancellationToken cancellationToken)
     {
         var scriptPath = ResolvePath(_options.ScriptPath);
@@ -50,12 +50,8 @@ public sealed class PythonImportEngine : IImportEngine
 
         startInfo.ArgumentList.Add(scriptPath);
         startInfo.ArgumentList.Add(file.AbsolutePath);
-
-        if (!string.IsNullOrWhiteSpace(confirmationsJson))
-        {
-            startInfo.ArgumentList.Add("--confirmations-json");
-            startInfo.ArgumentList.Add(confirmationsJson);
-        }
+        startInfo.ArgumentList.Add("--request-json");
+        startInfo.ArgumentList.Add(requestJson);
 
         using var timeout = new CancellationTokenSource(
             TimeSpan.FromSeconds(_options.TimeoutSeconds));

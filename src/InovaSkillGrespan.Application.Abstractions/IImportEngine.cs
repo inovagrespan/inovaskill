@@ -6,6 +6,6 @@ public interface IImportEngine
 {
     Task<JsonElement> ProcessAsync(
         StoredUploadedFile file,
-        string? confirmationsJson,
+        string requestJson,
         CancellationToken cancellationToken);
 }

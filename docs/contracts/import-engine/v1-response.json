@@ -1,0 +1,59 @@
+{
+  "contractVersion": "1.0",
+  "jobId": "9b3b8c0d-2e6d-4f14-b9df-2f8c7ad65001",
+  "correlationId": "corr-20260516-001",
+  "status": "CompletedWithWarnings",
+  "summary": {
+    "totalRows": 1200,
+    "importedRows": 1140,
+    "failedRows": 60,
+    "warningCount": 35,
+    "errorCount": 60,
+    "durationMs": 18342
+  },
+  "preview": {
+    "detectedColumns": [
+      "cliente",
+      "valor",
+      "data venda"
+    ],
+    "mapping": [
+      {
+        "sourceColumn": "cliente",
+        "targetField": "customer_name",
+        "score": 0.96,
+        "strategy": "hybrid_jw_alias"
+      }
+    ],
+    "sampleRows": []
+  },
+  "warnings": [
+    {
+      "code": "DATE_FORMAT_ASSUMED",
+      "message": "Formato dd/MM/yyyy assumido.",
+      "severity": "warning",
+      "rowNumber": 12,
+      "columnName": "data venda"
+    }
+  ],
+  "errors": [
+    {
+      "code": "INVALID_CPF",
+      "message": "CPF invalido.",
+      "severity": "error",
+      "rowNumber": 87,
+      "columnName": "cpf",
+      "rawValue": "123.456.789-00"
+    }
+  ],
+  "logs": [
+    {
+      "stage": "validate",
+      "level": "info",
+      "message": "Validation finished.",
+      "timestamp": "2026-05-16T14:30:00Z",
+      "details": {}
+    }
+  ]
+}
+
